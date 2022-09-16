@@ -169,6 +169,11 @@
       flake = false;
     };
 
+    # jellybeans = {
+    #   url = "https://github.com/metalelf0/jellybeans-nvim";
+    #   flake = false;
+    # };
+
     # Rust crates
     crates-nvim = {
       url = "github:Saecki/crates.nvim";
@@ -332,6 +337,7 @@
             clang = true;
             sql = true;
             ts = true;
+            deno = true;
             go = true;
             hare = true;
           };
@@ -352,12 +358,12 @@
           };
           vim.statusline.lualine = {
             enable = true;
-            theme = "onedark";
+            theme = "jellybeans";
           };
           vim.theme = {
             enable = true;
             name = "onedark";
-            style = "darker";
+            style = "warmer";
           };
           vim.autopairs.enable = true;
           vim.autocomplete = {

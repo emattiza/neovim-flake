@@ -15,15 +15,17 @@ in {
     };
 
     name = mkOption {
-      type = types.enum ["onedark" "tokyonight"];
-      description = ''Name of theme to use: "onedark" "tokyonight"'';
+      type = types.enum ["onedark" "tokyonight" "jellybeans"];
+      description = ''Name of theme to use: "onedark" "tokyonight" "jellybeans"'';
     };
 
     style = mkOption {
       type = with types; (
         if (cfg.name == "tokyonight")
         then (enum ["day" "night" "storm"])
-        else (enum ["dark" "darker" "cool" "deep" "warm" "warmer"])
+        else if (cfg.name == "onedark")
+        then (enum ["dark" "darker" "cool" "deep" "warm" "warmer"])
+        else (enum [])
       );
       description = ''Theme style: "storm", darker variant "night", and "day"'';
     };

@@ -31,6 +31,7 @@ in {
     sql = mkEnableOption "SQL Language LSP";
     go = mkEnableOption "Go language LSP";
     ts = mkEnableOption "TS language LSP";
+    deno = mkEnableOption "Deno LSP";
     hare = mkEnableOption "Hare plugin (not LSP)";
   };
 
@@ -330,6 +331,11 @@ in {
             end,
             cmd = { "${pkgs.nodePackages.typescript-language-server}/bin/typescript-language-server", "--stdio" }
           }
+        ''}
+
+        ${writeIf cfg.deno ''
+          -- Deno Config
+          lspconfig.denols.setup{}
         ''}
       '';
     }

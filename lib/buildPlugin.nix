@@ -21,6 +21,7 @@
     p.tree-sitter-css
     p.tree-sitter-graphql
     p.tree-sitter-json
+    p.tree-sitter-yaml
     pkgs.tree-sitter-hare
   ]);
 
