@@ -326,6 +326,7 @@ in {
           -- TS config
           lspconfig.tsserver.setup {
             capabilities = capabilities;
+            root_dir = lspconfig.util.root_pattern("package.json");
             on_attach = function(client, bufnr)
               attach_keymaps(client, bufnr)
             end,
@@ -335,7 +336,14 @@ in {
 
         ${writeIf cfg.deno ''
           -- Deno Config
-          lspconfig.denols.setup{}
+          lspconfig.denols.setup{
+            capabilities = capabilities;
+            root_dir = lspconfig.util.root_pattern("deno.jsonc");
+            on_attach = function(client, bufnr)
+              attach_keymaps(client, bufnr)
+            end,
+            cmd = { "${pkgs.deno}/bin/deno", "lsp" }
+          }
         ''}
       '';
     }
