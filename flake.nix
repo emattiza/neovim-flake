@@ -216,15 +216,6 @@
       flake = false;
     };
 
-    hare-vim = {
-      url = "git+https://git.sr.ht/~sircmpwn/hare.vim";
-      flake = false;
-    };
-
-    tree-sitter-hare = {
-      url = "git+https://git.sr.ht/~ecmma/tree-sitter-hare";
-      flake = false;
-    };
   };
 
   outputs = {
@@ -273,7 +264,6 @@
         "telescope"
         "rust-tools"
         "onedark"
-        "hare-vim"
       ];
 
       pluginOverlay = lib.buildPluginOverlay;
@@ -285,7 +275,6 @@
           pluginOverlay
           (final: prev: {
             rnix-lsp = inputs.rnix-lsp.defaultPackage.${system};
-            tree-sitter-hare = jdpkgs.packages.${system}.tree-sitter-hare;
           })
         ];
       };
@@ -338,7 +327,7 @@
               ts = true;
               deno = true;
               go = true;
-              hare = true;
+              hare = false;
             };
             vim.visuals = {
               enable = true;
