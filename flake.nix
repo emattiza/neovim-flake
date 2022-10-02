@@ -232,168 +232,167 @@
     jdpkgs,
     flake-utils,
     ...
-  } @ inputs: let
-    system = "x86_64-linux";
-
-    # Plugin must be same as input name
-    plugins = [
-      "nvim-treesitter-context"
-      "gitsigns-nvim"
-      "plenary-nvim"
-      "nvim-lspconfig"
-      "nvim-treesitter"
-      "lspsaga"
-      "lspkind"
-      "nvim-lightbulb"
-      "lsp-signature"
-      "nvim-tree-lua"
-      "nvim-bufferline-lua"
-      "lualine"
-      "nvim-compe"
-      "nvim-autopairs"
-      "nvim-ts-autotag"
-      "nvim-web-devicons"
-      "tokyonight"
-      "bufdelete-nvim"
-      "nvim-cmp"
-      "cmp-nvim-lsp"
-      "cmp-buffer"
-      "cmp-vsnip"
-      "cmp-path"
-      "cmp-treesitter"
-      "crates-nvim"
-      "vim-vsnip"
-      "nvim-code-action-menu"
-      "trouble"
-      "null-ls"
-      "which-key"
-      "indent-blankline"
-      "nvim-cursorline"
-      "sqls-nvim"
-      "glow-nvim"
-      "telescope"
-      "rust-tools"
-      "onedark"
-      "hare-vim"
-    ];
-
-    pluginOverlay = lib.buildPluginOverlay;
-
-    pkgs = import nixpkgs {
-      inherit system;
-      config = {allowUnfree = true;};
-      overlays = [
-        pluginOverlay
-        (final: prev: {
-          rnix-lsp = inputs.rnix-lsp.defaultPackage.${system};
-          tree-sitter-hare = jdpkgs.packages.${system}.tree-sitter-hare;
-        })
+  } @ inputs:
+    flake-utils.lib.eachDefaultSystem (system: let
+      # Plugin must be same as input name
+      plugins = [
+        "nvim-treesitter-context"
+        "gitsigns-nvim"
+        "plenary-nvim"
+        "nvim-lspconfig"
+        "nvim-treesitter"
+        "lspsaga"
+        "lspkind"
+        "nvim-lightbulb"
+        "lsp-signature"
+        "nvim-tree-lua"
+        "nvim-bufferline-lua"
+        "lualine"
+        "nvim-compe"
+        "nvim-autopairs"
+        "nvim-ts-autotag"
+        "nvim-web-devicons"
+        "tokyonight"
+        "bufdelete-nvim"
+        "nvim-cmp"
+        "cmp-nvim-lsp"
+        "cmp-buffer"
+        "cmp-vsnip"
+        "cmp-path"
+        "cmp-treesitter"
+        "crates-nvim"
+        "vim-vsnip"
+        "nvim-code-action-menu"
+        "trouble"
+        "null-ls"
+        "which-key"
+        "indent-blankline"
+        "nvim-cursorline"
+        "sqls-nvim"
+        "glow-nvim"
+        "telescope"
+        "rust-tools"
+        "onedark"
+        "hare-vim"
       ];
-    };
 
-    lib =
-      import
-      ./lib
-      {inherit pkgs inputs plugins;};
+      pluginOverlay = lib.buildPluginOverlay;
 
-    neovimBuilder = lib.neovimBuilder;
-  in rec {
-    apps.${system} = rec {
-      nvim = {
-        type = "app";
-        program = "${packages.${system}.default}/bin/nvim";
+      pkgs = import nixpkgs {
+        inherit system;
+        config = {allowUnfree = true;};
+        overlays = [
+          pluginOverlay
+          (final: prev: {
+            rnix-lsp = inputs.rnix-lsp.defaultPackage.${system};
+            tree-sitter-hare = jdpkgs.packages.${system}.tree-sitter-hare;
+          })
+        ];
       };
 
-      default = nvim;
-    };
+      lib =
+        import
+        ./lib
+        {inherit pkgs inputs plugins;};
 
-    devShells.${system}.default = pkgs.mkShell {
-      buildInputs = [packages.${system}.neovimJD];
-    };
+      neovimBuilder = lib.neovimBuilder;
+    in rec {
+      apps = rec {
+        nvim = {
+          type = "app";
+          program = "${packages}.default}/bin/nvim";
+        };
 
-    overlays.default = final: prev: {
-      inherit neovimBuilder;
-      neovimJD = packages.${system}.neovimJD;
-      neovimPlugins = pkgs.neovimPlugins;
-    };
+        default = nvim;
+      };
 
-    packages.${system} = rec {
-      default = neovimJD;
-      neovimJD = neovimBuilder {
-        config = {
-          vim.viAlias = false;
-          vim.vimAlias = true;
-          vim.lsp = {
-            enable = true;
-            formatOnSave = true;
-            lightbulb.enable = true;
-            lspsaga.enable = false;
-            nvimCodeActionMenu.enable = true;
-            trouble.enable = true;
-            lspSignature.enable = true;
-            rust.enable = true;
-            nix = true;
-            python = true;
-            clang = true;
-            sql = true;
-            ts = true;
-            deno = true;
-            go = true;
-            hare = true;
-          };
-          vim.visuals = {
-            enable = true;
-            nvimWebDevicons.enable = true;
-            lspkind.enable = true;
-            indentBlankline = {
+      devShells.default = pkgs.mkShell {
+        buildInputs = [packages.neovimJD];
+      };
+
+      overlays.default = final: prev: {
+        inherit neovimBuilder;
+        neovimJD = packages.${system}.neovimJD;
+        neovimPlugins = pkgs.neovimPlugins;
+      };
+
+      packages = rec {
+        default = neovimJD;
+        neovimJD = neovimBuilder {
+          config = {
+            vim.viAlias = false;
+            vim.vimAlias = true;
+            vim.lsp = {
               enable = true;
-              fillChar = "";
-              eolChar = "";
-              showCurrContext = true;
+              formatOnSave = true;
+              lightbulb.enable = true;
+              lspsaga.enable = false;
+              nvimCodeActionMenu.enable = true;
+              trouble.enable = true;
+              lspSignature.enable = true;
+              rust.enable = true;
+              nix = true;
+              python = true;
+              clang = true;
+              sql = true;
+              ts = true;
+              deno = true;
+              go = true;
+              hare = true;
             };
-            cursorWordline = {
+            vim.visuals = {
               enable = true;
-              lineTimeout = 0;
+              nvimWebDevicons.enable = true;
+              lspkind.enable = true;
+              indentBlankline = {
+                enable = true;
+                fillChar = "";
+                eolChar = "";
+                showCurrContext = true;
+              };
+              cursorWordline = {
+                enable = true;
+                lineTimeout = 0;
+              };
             };
-          };
-          vim.statusline.lualine = {
-            enable = true;
-            theme = "jellybeans";
-          };
-          vim.theme = {
-            enable = true;
-            name = "onedark";
-            style = "warmer";
-          };
-          vim.autopairs.enable = true;
-          vim.autocomplete = {
-            enable = true;
-            type = "nvim-cmp";
-          };
-          vim.filetree.nvimTreeLua.enable = false;
-          vim.tabline.nvimBufferline.enable = true;
-          vim.treesitter = {
-            enable = true;
-            autotagHtml = true;
-            context.enable = true;
-          };
-          vim.keys = {
-            enable = true;
-            whichKey.enable = true;
-          };
-          vim.telescope = {
-            enable = true;
-          };
-          vim.markdown = {
-            enable = true;
-            glow.enable = true;
-          };
-          vim.git = {
-            enable = true;
-            gitsigns.enable = true;
+            vim.statusline.lualine = {
+              enable = true;
+              theme = "jellybeans";
+            };
+            vim.theme = {
+              enable = true;
+              name = "onedark";
+              style = "warmer";
+            };
+            vim.autopairs.enable = true;
+            vim.autocomplete = {
+              enable = true;
+              type = "nvim-cmp";
+            };
+            vim.filetree.nvimTreeLua.enable = false;
+            vim.tabline.nvimBufferline.enable = true;
+            vim.treesitter = {
+              enable = true;
+              autotagHtml = true;
+              context.enable = true;
+            };
+            vim.keys = {
+              enable = true;
+              whichKey.enable = true;
+            };
+            vim.telescope = {
+              enable = true;
+            };
+            vim.markdown = {
+              enable = true;
+              glow.enable = true;
+            };
+            vim.git = {
+              enable = true;
+              gitsigns.enable = true;
+            };
           };
         };
       };
-    };
-  };
+    });
 }
