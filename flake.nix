@@ -300,7 +300,7 @@
       apps = rec {
         nvim = {
           type = "app";
-          program = "${packages}.default}/bin/nvim";
+          program = "${packages.default}/bin/nvim";
         };
 
         default = nvim;
