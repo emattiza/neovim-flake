@@ -365,7 +365,7 @@
               enable = true;
               type = "nvim-cmp";
             };
-            vim.filetree.nvimTreeLua.enable = false;
+            vim.filetree.nvimTreeLua.enable = true;
             vim.tabline.nvimBufferline.enable = true;
             vim.treesitter = {
               enable = true;
