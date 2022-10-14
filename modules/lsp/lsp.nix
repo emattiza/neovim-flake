@@ -26,6 +26,8 @@ in {
         description = "options to pass to rust analyzer";
       };
     };
+    shell = mkEnableOption "Shell LSP";
+    terraform = mkEnableOption "Terraform LSP";
     python = mkEnableOption "Python LSP";
     clang = mkEnableOption "C language LSP";
     sql = mkEnableOption "SQL Language LSP";
@@ -135,6 +137,15 @@ in {
         local null_methods = require("null-ls.methods")
 
         local ls_sources = {
+          ${writeIf cfg.shell
+          ''
+            null_ls.builtins.code_actions.shellcheck.with({
+              command = "${pkgs.shellcheck}/bin/shellcheck",
+            }),
+            null_ls.builtins.diagnostics.shellcheck.with({
+              command = "${pkgs.shellcheck}/bin/shellcheck",
+            }),
+          ''}
           ${writeIf cfg.python
           ''
             null_ls.builtins.formatting.black.with({
@@ -272,6 +283,14 @@ in {
           require('rust-tools').setup(rustopts)
         ''}
 
+        ${writeIf cfg.terraform ''
+          -- Terraform config
+          lspconfig.terraformls.setup{
+            capabilities = capabilities;
+            on_attach = default_on_attach;
+            cmd = {"${pkgs.terraform-ls}/bin/terraform-ls", "serve"};
+          }
+        ''}
         ${writeIf cfg.python ''
           -- Python config
           lspconfig.pyright.setup{

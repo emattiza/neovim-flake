@@ -215,7 +215,6 @@
       url = "github:nvim-lua/plenary.nvim";
       flake = false;
     };
-
   };
 
   outputs = {
@@ -322,6 +321,8 @@
               rust.enable = true;
               nix = true;
               python = true;
+              shell = true;
+              terraform = true;
               clang = true;
               sql = true;
               ts = true;
