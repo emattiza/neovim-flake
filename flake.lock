@@ -699,6 +699,7 @@
         "todo-comments": "todo-comments",
         "tokyonight": "tokyonight",
         "trouble": "trouble",
+        "vim-terraform": "vim-terraform",
         "vim-vsnip": "vim-vsnip",
         "which-key": "which-key"
       }
@@ -811,6 +812,22 @@
       "original": {
         "owner": "numtide",
         "repo": "flake-utils",
+        "type": "github"
+      }
+    },
+    "vim-terraform": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1625940486,
+        "narHash": "sha256-atyMKr5WChLBRDyO1KznH2LQzv5P+K+RQpQ71aeJB0k=",
+        "owner": "hashivim",
+        "repo": "vim-terraform",
+        "rev": "f0b17ac9f1bbdf3a29dba8b17ab429b1eed5d443",
+        "type": "github"
+      },
+      "original": {
+        "owner": "hashivim",
+        "repo": "vim-terraform",
         "type": "github"
       }
     },

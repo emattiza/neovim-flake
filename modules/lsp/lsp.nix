@@ -58,6 +58,11 @@ in {
             then sqls-nvim
             else null
           )
+          (
+            if cfg.terraform
+            then vim-terraform
+            else null
+          )
         ]
         ++ (
           if cfg.rust.enable

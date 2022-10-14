@@ -59,6 +59,11 @@
       flake = false;
     };
 
+    vim-terraform = {
+      url = "github:hashivim/vim-terraform";
+      flake = false;
+    };
+
     # Copying/Registers
     registers = {
       url = "github:tversteeg/registers.nvim";
@@ -263,6 +268,7 @@
         "telescope"
         "rust-tools"
         "onedark"
+        "vim-terraform"
       ];
 
       pluginOverlay = lib.buildPluginOverlay;
