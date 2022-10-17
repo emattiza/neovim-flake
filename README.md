@@ -3,6 +3,7 @@
 Nix flake for neovim with configuration options
 
 Originally based on Wil Taylor's amazing [neovim-flake](https://github.com/wiltaylor/neovim-flake)
+and jordanisaacs [neovim-flake](https://github.com/jordanisaacs/neovim-flake)
 
 ## Installation
 
@@ -15,7 +16,7 @@ nix run .#
 If you want to live life on the edge you can point to this repository directly with:
 
 ```
-nix run github:jordanisaacs/neovim-flake.#
+nix run github:emattiza/neovim-flake.#
 ```
 
 ## Options
@@ -85,6 +86,17 @@ Using [eslint](https://github.com/prettier/prettier) through null-ls.
 
 Disabled lsp server formatting, using [prettier](https://github.com/prettier/prettier) through null-ls.
 
+
+### Deno
+** LSP Server ** : Deno native
+
+**Linting**
+
+Using [eslint](https://github.com/prettier/prettier) through null-ls.
+
+**Formatting**
+
+Disabled lsp server formatting, using [prettier](https://github.com/prettier/prettier) through null-ls.
 
 
 ### Python
