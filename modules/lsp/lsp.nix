@@ -254,7 +254,7 @@ in {
               }
             ''
             else ''
-              capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
+              capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
             ''
           )}
 

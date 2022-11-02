@@ -3,6 +3,9 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
 
+    neovimUnwrapped = {
+      url = "github:neovim/neovim/v0.8.0?dir=contrib";
+    };
     jdpkgs = {
       url = "github:jordanisaacs/jdpkgs";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -91,7 +94,7 @@
 
     # Tablines
     nvim-bufferline-lua = {
-      url = "github:akinsho/nvim-bufferline.lua?ref=v1.2.0";
+      url = "github:akinsho/nvim-bufferline.lua?ref=v3.1.0";
       flake = false;
     };
 
@@ -231,6 +234,7 @@
     nixpkgs,
     jdpkgs,
     flake-utils,
+    neovimUnwrapped,
     ...
   } @ inputs:
     flake-utils.lib.eachDefaultSystem (system: let
@@ -283,6 +287,7 @@
         inherit system;
         config = {allowUnfree = true;};
         overlays = [
+          neovimUnwrapped.overlay
           pluginOverlay
           (final: prev: {
             rnix-lsp = inputs.rnix-lsp.defaultPackage.${system};
