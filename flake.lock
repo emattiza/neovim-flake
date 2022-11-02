@@ -96,22 +96,6 @@
         "type": "github"
       }
     },
-    "composer2nix": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1646178110,
-        "narHash": "sha256-P3acfGwHYjjZQcviPiOT7T7qzzP/drc2mibzrsrNP18=",
-        "owner": "svanderburg",
-        "repo": "composer2nix",
-        "rev": "299caca4aac42d7639a42eb4dde951c010f6e91c",
-        "type": "github"
-      },
-      "original": {
-        "owner": "svanderburg",
-        "repo": "composer2nix",
-        "type": "github"
-      }
-    },
     "crates-nvim": {
       "flake": false,
       "locked": {
@@ -202,27 +186,6 @@
       "original": {
         "owner": "lukas-reineke",
         "repo": "indent-blankline.nvim",
-        "type": "github"
-      }
-    },
-    "jdpkgs": {
-      "inputs": {
-        "composer2nix": "composer2nix",
-        "nixpkgs": [
-          "nixpkgs"
-        ]
-      },
-      "locked": {
-        "lastModified": 1664622802,
-        "narHash": "sha256-QXUe83VzxSaARrMOVAA+Wc2Oy4cHQE8dNoRCwfQSEgs=",
-        "owner": "jordanisaacs",
-        "repo": "jdpkgs",
-        "rev": "2d7727c51801cacefd29f13c71687d4fc68120f4",
-        "type": "github"
-      },
-      "original": {
-        "owner": "jordanisaacs",
-        "repo": "jdpkgs",
         "type": "github"
       }
     },
@@ -736,7 +699,6 @@
         "gitsigns-nvim": "gitsigns-nvim",
         "glow-nvim": "glow-nvim",
         "indent-blankline": "indent-blankline",
-        "jdpkgs": "jdpkgs",
         "kommentary": "kommentary",
         "lsp-signature": "lsp-signature",
         "lspkind": "lspkind",

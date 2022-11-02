@@ -6,10 +6,6 @@
     neovimUnwrapped = {
       url = "github:neovim/neovim/v0.8.0?dir=contrib";
     };
-    jdpkgs = {
-      url = "github:jordanisaacs/jdpkgs";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
 
     # LSP plugins
     nvim-lspconfig = {
@@ -227,7 +223,6 @@
 
   outputs = {
     nixpkgs,
-    jdpkgs,
     flake-utils,
     neovimUnwrapped,
     ...
