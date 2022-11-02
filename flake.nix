@@ -339,6 +339,7 @@
               sql = true;
               ts = true;
               deno = true;
+              elm = true;
               go = true;
               hare = false;
             };

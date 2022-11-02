@@ -35,6 +35,7 @@ in {
     ts = mkEnableOption "TS language LSP";
     deno = mkEnableOption "Deno LSP";
     hare = mkEnableOption "Hare plugin (not LSP)";
+    elm = mkEnableOption "Elm LSP";
   };
 
   config = mkIf cfg.enable (
@@ -196,6 +197,12 @@ in {
             null_ls.builtins.diagnostics.eslint,
             null_ls.builtins.formatting.prettier,
           ''}
+          ${
+          writeIf cfg.elm
+          ''
+            null_ls.builtins.formatting.elm_format,
+          ''
+        }
         }
 
         vim.g.formatsave = ${
@@ -357,6 +364,15 @@ in {
           lspconfig.denols.setup{
             capabilities = capabilities;
             root_dir = lspconfig.util.root_pattern("deno.jsonc");
+            on_attach = function(client, bufnr)
+              attach_keymaps(client, bufnr)
+            end,
+          }
+        ''}
+        ${writeIf cfg.elm ''
+          -- Elm Config
+          lspconfig.elmls.setup{
+            capabilities = capabilities;
             on_attach = function(client, bufnr)
               attach_keymaps(client, bufnr)
             end,
