@@ -174,6 +174,11 @@
       flake = false;
     };
 
+    nightfox = {
+      url = "github:EdenEast/nightfox.nvim";
+      flake = false;
+    };
+
     # jellybeans = {
     #   url = "https://github.com/metalelf0/jellybeans-nvim";
     #   flake = false;
@@ -268,6 +273,7 @@
         "telescope"
         "rust-tools"
         "onedark"
+        "nightfox"
         "vim-terraform"
       ];
 
@@ -357,8 +363,8 @@
             };
             vim.theme = {
               enable = true;
-              name = "onedark";
-              style = "warmer";
+              name = "nightfox";
+              style = "carbonfox";
             };
             vim.autopairs.enable = true;
             vim.autocomplete = {

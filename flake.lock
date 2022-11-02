@@ -312,6 +312,22 @@
         "type": "github"
       }
     },
+    "nightfox": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1666972442,
+        "narHash": "sha256-7ngTCx4pdAzcZj0WNd0rtDPDE9Blw/BqpF+YgS533iY=",
+        "owner": "EdenEast",
+        "repo": "nightfox.nvim",
+        "rev": "db26a92fc0175c9ffaa27db489308e306823ed3f",
+        "type": "github"
+      },
+      "original": {
+        "owner": "EdenEast",
+        "repo": "nightfox.nvim",
+        "type": "github"
+      }
+    },
     "nixpkgs": {
       "locked": {
         "lastModified": 1664556388,
@@ -673,6 +689,7 @@
         "lspkind": "lspkind",
         "lspsaga": "lspsaga",
         "lualine": "lualine",
+        "nightfox": "nightfox",
         "nixpkgs": "nixpkgs",
         "null-ls": "null-ls",
         "nvim-autopairs": "nvim-autopairs",
