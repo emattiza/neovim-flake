@@ -139,6 +139,8 @@ in {
         "<C-n>" = ":NvimTreeToggle<CR>";
         "<leader>tr" = ":NvimTreeRefresh<CR>";
         "<leader>tf" = ":NvimTreeFindFile<CR>";
+        "<leader>tc" = ":NvimTreeClose<CR>";
+        "<leader>to" = ":NvimTreeOpen<CR>";
       };
 
       vim.luaConfigRC = ''

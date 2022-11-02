@@ -272,7 +272,6 @@ in {
             server = {
               capabilities = capabilities,
               on_attach = default_on_attach,
-              cmd = {"${pkgs.rust-analyzer}/bin/rust-analyzer"},
               settings = {
                 ${cfg.rust.rustAnalyzerOpts}
               }
@@ -293,7 +292,6 @@ in {
           lspconfig.terraformls.setup{
             capabilities = capabilities;
             on_attach = default_on_attach;
-            cmd = {"${pkgs.terraform-ls}/bin/terraform-ls", "serve"};
           }
         ''}
         ${writeIf cfg.python ''
@@ -321,7 +319,6 @@ in {
           lspconfig.ccls.setup{
             capabilities = capabilities;
             on_attach=default_on_attach;
-            cmd = {"${pkgs.ccls}/bin/ccls"}
           }
         ''}
 
@@ -333,7 +330,6 @@ in {
               on_attach_keymaps(client, bufnr)
               require'sqls'.setup{}
             end,
-            cmd = {"${pkgs.sqls}/bin/sqls", "-config", string.format("%s/config.yml", vim.fn.getcwd()) }
           }
         ''}
 
@@ -342,7 +338,6 @@ in {
           lspconfig.gopls.setup {
             capabilities = capabilities;
             on_attach = default_on_attach;
-            cmd = {"${pkgs.gopls}/bin/gopls", "serve"},
           }
         ''}
 
@@ -354,7 +349,6 @@ in {
             on_attach = function(client, bufnr)
               attach_keymaps(client, bufnr)
             end,
-            cmd = { "${pkgs.nodePackages.typescript-language-server}/bin/typescript-language-server", "--stdio" }
           }
         ''}
 
@@ -366,7 +360,6 @@ in {
             on_attach = function(client, bufnr)
               attach_keymaps(client, bufnr)
             end,
-            cmd = { "${pkgs.deno}/bin/deno", "lsp" }
           }
         ''}
       '';

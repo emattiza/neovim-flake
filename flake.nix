@@ -13,7 +13,7 @@
 
     # LSP plugins
     nvim-lspconfig = {
-      url = "github:neovim/nvim-lspconfig?ref=v0.1.3";
+      url = "github:neovim/nvim-lspconfig?ref=master";
       flake = false;
     };
     nvim-treesitter = {
@@ -181,11 +181,6 @@
       url = "github:EdenEast/nightfox.nvim";
       flake = false;
     };
-
-    # jellybeans = {
-    #   url = "https://github.com/metalelf0/jellybeans-nvim";
-    #   flake = false;
-    # };
 
     # Rust crates
     crates-nvim = {
