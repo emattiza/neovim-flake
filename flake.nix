@@ -360,7 +360,7 @@
             vim.theme = {
               enable = true;
               name = "nightfox";
-              style = "carbonfox";
+              style = "terafox";
             };
             vim.autopairs.enable = true;
             vim.autocomplete = {
