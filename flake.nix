@@ -307,7 +307,7 @@
 
       overlays.default = final: prev: {
         inherit neovimBuilder;
-        neovimEM = packages.${system}.neovimEM;
+        neovimEM = packages.neovimEM;
         neovimPlugins = pkgs.neovimPlugins;
       };
 
