@@ -302,18 +302,18 @@
       };
 
       devShells.default = pkgs.mkShell {
-        buildInputs = [packages.neovimJD];
+        buildInputs = [packages.neovimEM];
       };
 
       overlays.default = final: prev: {
         inherit neovimBuilder;
-        neovimJD = packages.${system}.neovimJD;
+        neovimEM = packages.${system}.neovimEM;
         neovimPlugins = pkgs.neovimPlugins;
       };
 
       packages = rec {
-        default = neovimJD;
-        neovimJD = neovimBuilder {
+        default = neovimEM;
+        neovimEM = neovimBuilder {
           config = {
             vim.viAlias = false;
             vim.vimAlias = true;
