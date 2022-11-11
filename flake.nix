@@ -291,6 +291,82 @@
         {inherit pkgs inputs plugins;};
 
       neovimBuilder = lib.neovimBuilder;
+      baseConfig = {
+        vim.viAlias = false;
+        vim.vimAlias = true;
+        vim.lsp = {
+          enable = true;
+          formatOnSave = true;
+          lightbulb.enable = true;
+          lspsaga.enable = false;
+          nvimCodeActionMenu.enable = true;
+          trouble.enable = true;
+          lspSignature.enable = true;
+          rust.enable = false;
+          nix = false;
+          python = false;
+          shell = false;
+          terraform = false;
+          clang = false;
+          sql = false;
+          ts = false;
+          deno = false;
+          elm = false;
+          go = false;
+          hare = false;
+        };
+        vim.visuals = {
+          enable = true;
+          nvimWebDevicons.enable = true;
+          lspkind.enable = true;
+          indentBlankline = {
+            enable = true;
+            fillChar = "";
+            eolChar = "";
+            showCurrContext = true;
+          };
+          cursorWordline = {
+            enable = true;
+            lineTimeout = 0;
+          };
+        };
+        vim.statusline.lualine = {
+          enable = true;
+          theme = "jellybeans";
+        };
+        vim.theme = {
+          enable = true;
+          name = "nightfox";
+          style = "terafox";
+        };
+        vim.autopairs.enable = true;
+        vim.autocomplete = {
+          enable = true;
+          type = "nvim-cmp";
+        };
+        vim.filetree.nvimTreeLua.enable = true;
+        vim.tabline.nvimBufferline.enable = true;
+        vim.treesitter = {
+          enable = true;
+          autotagHtml = true;
+          context.enable = true;
+        };
+        vim.keys = {
+          enable = true;
+          whichKey.enable = true;
+        };
+        vim.telescope = {
+          enable = true;
+        };
+        vim.markdown = {
+          enable = true;
+          glow.enable = true;
+        };
+        vim.git = {
+          enable = true;
+          gitsigns.enable = true;
+        };
+      };
     in rec {
       apps = rec {
         nvim = {
@@ -313,83 +389,81 @@
 
       packages = rec {
         default = neovimEM;
+        neovimPython = neovimBuilder {
+          config =
+            baseConfig
+            // {
+              vim.lsp = {
+                python = true;
+                shell = true;
+              };
+            };
+        };
+        neovimLofty = neovimBuilder {
+          config =
+            pkgs.lib.recursiveUpdate
+            baseConfig
+            {
+              vim.lsp = {
+                python = true;
+                shell = true;
+                ts = true;
+                sql = true;
+              };
+            };
+        };
+        neovimLoftyInfra = neovimBuilder {
+          config =
+            baseConfig
+            // {
+              vim.lsp = {
+                python = true;
+                ts = true;
+                sql = true;
+                terraform = true;
+                nix = true;
+                shell = true;
+              };
+            };
+        };
+        neovimRust = neovimBuilder {
+          config =
+            pkgs.lib.recursiveUpdate
+            baseConfig
+            {
+              vim.lsp = {
+                rust.enable = true;
+                nix = true;
+                shell = true;
+              };
+            };
+        };
         neovimEM = neovimBuilder {
-          config = {
-            vim.viAlias = false;
-            vim.vimAlias = true;
-            vim.lsp = {
-              enable = true;
-              formatOnSave = true;
-              lightbulb.enable = true;
-              lspsaga.enable = false;
-              nvimCodeActionMenu.enable = true;
-              trouble.enable = true;
-              lspSignature.enable = true;
-              rust.enable = true;
-              nix = true;
-              python = true;
-              shell = true;
-              terraform = true;
-              clang = true;
-              sql = true;
-              ts = true;
-              deno = true;
-              elm = true;
-              go = true;
-              hare = false;
-            };
-            vim.visuals = {
-              enable = true;
-              nvimWebDevicons.enable = true;
-              lspkind.enable = true;
-              indentBlankline = {
+          config =
+            baseConfig
+            // {
+              vim.lsp = {
                 enable = true;
-                fillChar = "";
-                eolChar = "";
-                showCurrContext = true;
-              };
-              cursorWordline = {
-                enable = true;
-                lineTimeout = 0;
+                formatOnSave = true;
+                lightbulb.enable = true;
+                lspsaga.enable = false;
+                nvimCodeActionMenu.enable = true;
+                trouble.enable = true;
+                lspSignature.enable = true;
+                rust.enable = true;
+                nix = true;
+                python = true;
+                shell = true;
+                terraform = true;
+                clang = true;
+                sql = true;
+                ts = true;
+                deno = true;
+                elm = true;
+                go = true;
+                hare = false;
               };
             };
-            vim.statusline.lualine = {
-              enable = true;
-              theme = "jellybeans";
-            };
-            vim.theme = {
-              enable = true;
-              name = "nightfox";
-              style = "terafox";
-            };
-            vim.autopairs.enable = true;
-            vim.autocomplete = {
-              enable = true;
-              type = "nvim-cmp";
-            };
-            vim.filetree.nvimTreeLua.enable = true;
-            vim.tabline.nvimBufferline.enable = true;
-            vim.treesitter = {
-              enable = true;
-              autotagHtml = true;
-              context.enable = true;
-            };
-            vim.keys = {
-              enable = true;
-              whichKey.enable = true;
-            };
-            vim.telescope = {
-              enable = true;
-            };
-            vim.markdown = {
-              enable = true;
-              glow.enable = true;
-            };
-            vim.git = {
-              enable = true;
-              gitsigns.enable = true;
-            };
-          };
         };
       };
     });
