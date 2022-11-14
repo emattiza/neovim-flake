@@ -391,8 +391,9 @@
         default = neovimEM;
         neovimPython = neovimBuilder {
           config =
+            pkgs.lib.recursiveUpdate
             baseConfig
-            // {
+            {
               vim.lsp = {
                 python = true;
                 shell = true;
@@ -414,8 +415,9 @@
         };
         neovimLoftyInfra = neovimBuilder {
           config =
+            pkgs.lib.recursiveUpdate
             baseConfig
-            // {
+            {
               vim.lsp = {
                 python = true;
                 ts = true;
@@ -440,8 +442,9 @@
         };
         neovimEM = neovimBuilder {
           config =
+            pkgs.lib.recursiveUpdate
             baseConfig
-            // {
+            {
               vim.lsp = {
                 enable = true;
                 formatOnSave = true;
