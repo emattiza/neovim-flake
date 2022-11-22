@@ -4,7 +4,7 @@
     nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
 
     neovimUnwrapped = {
-      url = "github:neovim/neovim/v0.8.0?dir=contrib";
+      url = "github:neovim/neovim/v0.8.1?dir=contrib";
     };
 
     # LSP plugins
@@ -298,7 +298,7 @@
           enable = true;
           formatOnSave = true;
           lightbulb.enable = true;
-          lspsaga.enable = false;
+          lspsaga.enable = true;
           nvimCodeActionMenu.enable = true;
           trouble.enable = true;
           lspSignature.enable = true;
@@ -449,7 +449,7 @@
                 enable = true;
                 formatOnSave = true;
                 lightbulb.enable = true;
-                lspsaga.enable = false;
+                lspsaga.enable = true;
                 nvimCodeActionMenu.enable = true;
                 trouble.enable = true;
                 lspSignature.enable = true;
