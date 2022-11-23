@@ -7,6 +7,7 @@
   inherit (prev.vimUtils) buildVimPluginFrom2Nix;
 
   treesitterGrammars = prev.tree-sitter.withPlugins (p: [
+    p.tree-sitter-go
     p.tree-sitter-c
     p.tree-sitter-nix
     p.tree-sitter-python
