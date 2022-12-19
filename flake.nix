@@ -219,6 +219,11 @@
       url = "github:nvim-lua/plenary.nvim";
       flake = false;
     };
+
+    undotree = {
+      url = "github:mbbill/undotree";
+      flake = false;
+    };
   };
 
   outputs = {
@@ -269,6 +274,7 @@
         "onedark"
         "nightfox"
         "vim-terraform"
+        "undotree"
       ];
 
       pluginOverlay = lib.buildPluginOverlay;
@@ -356,6 +362,9 @@
           whichKey.enable = true;
         };
         vim.telescope = {
+          enable = true;
+        };
+        vim.undotree = {
           enable = true;
         };
         vim.markdown = {

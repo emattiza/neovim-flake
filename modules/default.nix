@@ -20,6 +20,7 @@
     ./keys
     ./markdown
     ./telescope
+    ./undotree
     ./git
   ];
 }
