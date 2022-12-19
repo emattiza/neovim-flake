@@ -34,6 +34,7 @@ in {
     go = mkEnableOption "Go language LSP";
     ts = mkEnableOption "TS language LSP";
     deno = mkEnableOption "Deno LSP";
+    purescript = mkEnableOption "Purescript LSP";
     hare = mkEnableOption "Hare plugin (not LSP)";
     elm = mkEnableOption "Elm LSP";
   };
@@ -353,6 +354,15 @@ in {
           lspconfig.tsserver.setup {
             capabilities = capabilities;
             root_dir = lspconfig.util.root_pattern("package.json");
+            on_attach = function(client, bufnr)
+              attach_keymaps(client, bufnr)
+            end,
+          }
+        ''}
+        ${writeIf cfg.purescript ''
+          -- Deno Config
+          lspconfig.purescriptls.setup{
+            capabilities = capabilities;
             on_attach = function(client, bufnr)
               attach_keymaps(client, bufnr)
             end,

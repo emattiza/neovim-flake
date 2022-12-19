@@ -338,6 +338,7 @@
           sql = false;
           ts = false;
           deno = false;
+          purescript = false;
           elm = false;
           go = false;
           hare = false;
@@ -496,6 +497,7 @@
                 clang = true;
                 sql = true;
                 ts = true;
+                purescript = true;
                 deno = true;
                 elm = true;
                 go = true;

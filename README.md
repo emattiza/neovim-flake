@@ -98,6 +98,8 @@ Using [eslint](https://github.com/prettier/prettier) through null-ls.
 
 Disabled lsp server formatting, using [prettier](https://github.com/prettier/prettier) through null-ls.
 
+### Purescript
+** LSP Server ** : purescript-language-server
 
 ### Python
 
