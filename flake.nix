@@ -32,6 +32,10 @@
       url = "github:lewis6991/nvim-treesitter-context";
       flake = false;
     };
+    nvim-treesitter-playground = {
+      url = "github:nvim-treesitter/playground";
+      flake = false;
+    };
     nvim-lightbulb = {
       url = "github:kosayoda/nvim-lightbulb";
       flake = false;
@@ -236,6 +240,7 @@
       # Plugin must be same as input name
       plugins = [
         "nvim-treesitter-context"
+        "nvim-treesitter-playground"
         "gitsigns-nvim"
         "plenary-nvim"
         "nvim-lspconfig"
@@ -356,6 +361,7 @@
           enable = true;
           autotagHtml = true;
           context.enable = true;
+          playground.enable = true;
         };
         vim.keys = {
           enable = true;
