@@ -241,6 +241,10 @@
       url = "github:nvim-neotest/neotest-python";
       flake = false;
     };
+    purescript-vim = {
+      url = "github:purescript-contrib/purescript-vim";
+      flake = false;
+    };
   };
 
   outputs = {
@@ -296,6 +300,7 @@
         "nvim-coverage"
         "nvim-neotest"
         "neotest-python"
+        "purescript-vim"
       ];
 
       pluginOverlay = lib.buildPluginOverlay;

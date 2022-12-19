@@ -714,6 +714,22 @@
         "type": "github"
       }
     },
+    "purescript-vim": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1670393196,
+        "narHash": "sha256-iYtdGCCz/EVrcDwDmTbiUVGou8b0hG5LbdSczkBbgKs=",
+        "owner": "purescript-contrib",
+        "repo": "purescript-vim",
+        "rev": "7af25a840d38dc6767c85edd1f35c1f835618071",
+        "type": "github"
+      },
+      "original": {
+        "owner": "purescript-contrib",
+        "repo": "purescript-vim",
+        "type": "github"
+      }
+    },
     "registers": {
       "flake": false,
       "locked": {
@@ -792,6 +808,7 @@
         "nvim-web-devicons": "nvim-web-devicons",
         "onedark": "onedark",
         "plenary-nvim": "plenary-nvim",
+        "purescript-vim": "purescript-vim",
         "registers": "registers",
         "rnix-lsp": "rnix-lsp",
         "rust-tools": "rust-tools",
