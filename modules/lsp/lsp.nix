@@ -48,6 +48,11 @@ in {
     in {
       vim.startPlugins = with pkgs.neovimPlugins;
         [
+          (
+            if (cfg.purescript)
+            then purescript-vim
+            else null
+          )
           nvim-lspconfig
           null-ls
           (
