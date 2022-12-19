@@ -228,6 +228,19 @@
       url = "github:mbbill/undotree";
       flake = false;
     };
+
+    nvim-coverage = {
+      url = "github:andythigpen/nvim-coverage";
+      flake = false;
+    };
+    nvim-neotest = {
+      url = "github:nvim-neotest/neotest";
+      flake = false;
+    };
+    neotest-python = {
+      url = "github:nvim-neotest/neotest-python";
+      flake = false;
+    };
   };
 
   outputs = {
@@ -280,6 +293,9 @@
         "nightfox"
         "vim-terraform"
         "undotree"
+        "nvim-coverage"
+        "nvim-neotest"
+        "neotest-python"
       ];
 
       pluginOverlay = lib.buildPluginOverlay;
@@ -380,6 +396,10 @@
         vim.git = {
           enable = true;
           gitsigns.enable = true;
+        };
+        vim.testing = {
+          enable = true;
+          coverage.enable = true;
         };
       };
     in rec {

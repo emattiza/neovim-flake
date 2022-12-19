@@ -290,6 +290,22 @@
         "type": "github"
       }
     },
+    "neotest-python": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1669110105,
+        "narHash": "sha256-WYFS5AxDMClAeDKlmqdlA65QDWN/z2MuqGOTUhgaPgU=",
+        "owner": "nvim-neotest",
+        "repo": "neotest-python",
+        "rev": "e53920d145d37783c8d8428365a0a230e0a18cb5",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nvim-neotest",
+        "repo": "neotest-python",
+        "type": "github"
+      }
+    },
     "neovimUnwrapped": {
       "inputs": {
         "flake-utils": "flake-utils_2",
@@ -473,6 +489,22 @@
         "type": "github"
       }
     },
+    "nvim-coverage": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1667162090,
+        "narHash": "sha256-3nncLtyDYGk8E/DKD0Z1QJj5gmha7b996Mn5izSOeO4=",
+        "owner": "andythigpen",
+        "repo": "nvim-coverage",
+        "rev": "f067885c422f42bcbedd15f16a11e8ba8c771693",
+        "type": "github"
+      },
+      "original": {
+        "owner": "andythigpen",
+        "repo": "nvim-coverage",
+        "type": "github"
+      }
+    },
     "nvim-cursorline": {
       "flake": false,
       "locked": {
@@ -535,6 +567,22 @@
       "original": {
         "owner": "AckslD",
         "repo": "nvim-neoclip.lua",
+        "type": "github"
+      }
+    },
+    "nvim-neotest": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1671096789,
+        "narHash": "sha256-jFRnS2zRE7TbzqCSBXhAKkTMFtnnYSYlAaXSd38ytfM=",
+        "owner": "nvim-neotest",
+        "repo": "neotest",
+        "rev": "de2f68fb13a05c361e0c096e167f7f79712f3a5c",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nvim-neotest",
+        "repo": "neotest",
         "type": "github"
       }
     },
@@ -720,6 +768,7 @@
         "lspkind": "lspkind",
         "lspsaga": "lspsaga",
         "lualine": "lualine",
+        "neotest-python": "neotest-python",
         "neovimUnwrapped": "neovimUnwrapped",
         "nightfox": "nightfox",
         "nixpkgs": "nixpkgs_2",
@@ -729,10 +778,12 @@
         "nvim-cmp": "nvim-cmp",
         "nvim-code-action-menu": "nvim-code-action-menu",
         "nvim-compe": "nvim-compe",
+        "nvim-coverage": "nvim-coverage",
         "nvim-cursorline": "nvim-cursorline",
         "nvim-lightbulb": "nvim-lightbulb",
         "nvim-lspconfig": "nvim-lspconfig",
         "nvim-neoclip": "nvim-neoclip",
+        "nvim-neotest": "nvim-neotest",
         "nvim-tree-lua": "nvim-tree-lua",
         "nvim-treesitter": "nvim-treesitter",
         "nvim-treesitter-context": "nvim-treesitter-context",

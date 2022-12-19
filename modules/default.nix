@@ -22,5 +22,6 @@
     ./telescope
     ./undotree
     ./git
+    ./testing
   ];
 }
