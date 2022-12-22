@@ -371,6 +371,7 @@
           enable = true;
           name = "nightfox";
           style = "terafox";
+          transparent = true;
         };
         vim.autopairs.enable = true;
         vim.autocomplete = {

@@ -35,6 +35,11 @@ in {
       );
       description = ''Theme style: "storm", darker variant "night", and "day"'';
     };
+
+    transparent = mkOption {
+      type = types.bool;
+      description = ''Sets transparent background'';
+    };
   };
 
   config =
@@ -70,6 +75,11 @@ in {
           ${writeIf (cfg.name == "nightfox") ''
             -- Nightfox theme
             require('nightfox').setup({
+              options = {
+              ${writeIf cfg.transparent ''
+              transparent = true,
+            ''}
+              },
             })
             vim.cmd("colorscheme ${cfg.style}")
           ''}
