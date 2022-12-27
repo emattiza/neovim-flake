@@ -302,7 +302,7 @@ in {
 
         ${writeIf cfg.terraform ''
           -- Terraform config
-          lspconfig.terraformls.setup{
+          lspconfig.terraform_lsp.setup{
             capabilities = capabilities;
             on_attach = default_on_attach;
           }
