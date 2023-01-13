@@ -249,7 +249,7 @@
     #!! FUN !!
     cellular-automaton = {
       url = "github:Eandrju/cellular-automaton.nvim";
-      flake = true;
+      flake = false;
     };
   };
 
