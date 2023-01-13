@@ -7,5 +7,6 @@
   imports = [
     ./config.nix
     ./visuals.nix
+    ./cellular-automaton.nix
   ];
 }
