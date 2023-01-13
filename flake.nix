@@ -245,6 +245,12 @@
       url = "github:purescript-contrib/purescript-vim";
       flake = false;
     };
+
+    #!! FUN !!
+    cellular-automaton = {
+      url = "github:Eandrju/cellular-automaton.nvim";
+      flake = true;
+    };
   };
 
   outputs = {
@@ -301,6 +307,7 @@
         "nvim-neotest"
         "neotest-python"
         "purescript-vim"
+        "cellular-automaton"
       ];
 
       pluginOverlay = lib.buildPluginOverlay;
@@ -361,6 +368,9 @@
           cursorWordline = {
             enable = true;
             lineTimeout = 0;
+          };
+          cellular-automaton = {
+            enable = true;
           };
         };
         vim.statusline.lualine = {

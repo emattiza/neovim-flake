@@ -1,7 +1,8 @@
-{ pkgs
-, config
-, lib
-, ...
+{
+  pkgs,
+  config,
+  lib,
+  ...
 }:
 with lib; {
   config = {
@@ -22,6 +23,9 @@ with lib; {
         fillChar = mkDefault "⋅";
         eolChar = mkDefault "↴";
         showCurrContext = mkDefault true;
+      };
+      cellular-automaton = {
+        enable = mkDefault true;
       };
     };
   };
