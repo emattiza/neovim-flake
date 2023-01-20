@@ -302,9 +302,23 @@ in {
 
         ${writeIf cfg.terraform ''
           -- Terraform config
+          simple_format_callback = function(client, bufnr)
+            vim.api.nvim_create_autocmd("BufWritePre", {
+              group = augroup,
+              buffer = bufnr,
+              callback = function()
+                if vim.g.formatsave then
+                    vim.api.nvim_command("TerraformFmt")
+                end
+              end
+          })
+          end
           lspconfig.terraform_lsp.setup{
             capabilities = capabilities;
-            on_attach = default_on_attach;
+            on_attach = function (client, bufnr)
+              attach_keymaps(client, bufnr)
+              simple_format_callback(client, bufnr)
+            end;
           }
         ''}
         ${writeIf cfg.python ''
