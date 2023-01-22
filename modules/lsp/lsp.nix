@@ -332,12 +332,12 @@ in {
 
         ${writeIf cfg.nix ''
           -- Nix config
-          lspconfig.rnix.setup{
+          lspconfig.nil_ls.setup{
             capabilities = capabilities;
             on_attach = function(client, bufnr)
               attach_keymaps(client, bufnr)
             end,
-            cmd = {"${pkgs.rnix-lsp}/bin/rnix-lsp"}
+            cmd = {"${pkgs.nil}/bin/nil"}
           }
         ''}
 
