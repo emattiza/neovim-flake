@@ -4,7 +4,7 @@
     nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
 
     neovimUnwrapped = {
-      url = "github:neovim/neovim/v0.8.1?dir=contrib";
+      url = "github:neovim/neovim/v0.8.3?dir=contrib";
     };
 
     # LSP plugins
