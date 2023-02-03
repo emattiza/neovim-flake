@@ -271,6 +271,10 @@ in {
             })
           end
 
+          default_nofmt_on_attach = function(client, bufnr)
+            attach_keymaps(client, bufnr)
+          end
+
           default_on_attach = function(client, bufnr)
             attach_keymaps(client, bufnr)
             format_callback(client, bufnr)
@@ -365,7 +369,7 @@ in {
             -- Python config
             lspconfig.pyright.setup{
               capabilities = capabilities;
-              on_attach=default_on_attach;
+              on_attach= default_nofmt_on_attach;
               cmd = {"${pkgs.nodePackages.pyright}/bin/pyright-langserver", "--stdio"}
             }
           ''}
