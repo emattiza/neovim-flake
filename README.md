@@ -19,6 +19,11 @@ If you want to live life on the edge you can point to this repository directly w
 nix run github:emattiza/neovim-flake.#
 ```
 
+If you don't want to use nix, you can do the following with docker and host mounts:
+```bash
+docker run -v `pwd`:`pwd` -w `pwd` --rm -it ghcr.io/emattiza/neovim-flake:latest
+```
+
 ## Options
 
 The philosophy behind this flake configuration is sensible options. While the default package has almost everything enabled, when building your own config using the overlay everything is disabled. By enabling a plugin or language, it will set up the keybindings and plugin automatically. Additionally each plugin knows when another plugin is enabled allowing for smart configuration of keybindings and automatic setup of things like completion sources and languages.
