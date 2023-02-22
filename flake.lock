@@ -128,6 +128,22 @@
         "type": "github"
       }
     },
+    "dhall-vim": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1622918822,
+        "narHash": "sha256-HCMI41N7ntB0vE+ax06Vs8tEObJllAG326odzCZRllM=",
+        "owner": "vmchale",
+        "repo": "dhall-vim",
+        "rev": "68500ef46ff3706f46c99db3be7a0c8abcf6a3ae",
+        "type": "github"
+      },
+      "original": {
+        "owner": "vmchale",
+        "repo": "dhall-vim",
+        "type": "github"
+      }
+    },
     "flake-utils": {
       "locked": {
         "lastModified": 1667395993,
@@ -841,6 +857,7 @@
         "cmp-treesitter": "cmp-treesitter",
         "cmp-vsnip": "cmp-vsnip",
         "crates-nvim": "crates-nvim",
+        "dhall-vim": "dhall-vim",
         "flake-utils": "flake-utils",
         "gitsigns-nvim": "gitsigns-nvim",
         "glow-nvim": "glow-nvim",

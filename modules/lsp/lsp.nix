@@ -35,6 +35,7 @@ in {
     ts = mkEnableOption "TS language LSP";
     deno = mkEnableOption "Deno LSP";
     purescript = mkEnableOption "Purescript LSP";
+    dhall = mkEnableOption "Dhall LSP";
     hare = mkEnableOption "Hare plugin (not LSP)";
     elm = mkEnableOption "Elm LSP";
   };
@@ -49,6 +50,11 @@ in {
       vim = {
         startPlugins = with pkgs.neovimPlugins;
           [
+            (
+              if (cfg.dhall)
+              then dhall-vim
+              else null
+            )
             (
               if (cfg.purescript)
               then purescript-vim
@@ -432,6 +438,15 @@ in {
             }
           ''}
 
+          ${writeIf cfg.dhall ''
+            -- Deno Config
+            lspconfig.dhall_lsp_server.setup{
+              capabilities = capabilities;
+              on_attach = function(client, bufnr)
+                attach_keymaps(client, bufnr)
+              end,
+            }
+          ''}
           ${writeIf cfg.deno ''
             -- Deno Config
             lspconfig.denols.setup{

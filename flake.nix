@@ -246,6 +246,10 @@
       url = "github:purescript-contrib/purescript-vim";
       flake = false;
     };
+    dhall-vim = {
+      url = "github:vmchale/dhall-vim";
+      flake = false;
+    };
 
     #!! FUN !!
     cellular-automaton = {
@@ -309,6 +313,7 @@
         "nvim-neotest"
         "neotest-python"
         "purescript-vim"
+        "dhall-vim"
         "cellular-automaton"
       ];
 
@@ -518,6 +523,7 @@
                 sql = true;
                 ts = true;
                 purescript = true;
+                dhall = true;
                 deno = true;
                 elm = true;
                 go = true;
