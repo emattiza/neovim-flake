@@ -2,6 +2,7 @@
   description = "Jordan's Neovim Configuration";
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
+    nix2container.url = "github:nlewo/nix2container";
 
     neovimUnwrapped = {
       url = "github:neovim/neovim/v0.8.3?dir=contrib";
@@ -257,6 +258,7 @@
     nixpkgs,
     flake-utils,
     neovimUnwrapped,
+    nix2container,
     ...
   } @ inputs:
     flake-utils.lib.eachDefaultSystem (system: let
@@ -323,6 +325,8 @@
           })
         ];
       };
+
+      nix2containerPkgs = nix2container.packages.${system};
 
       lib =
         import
@@ -520,6 +524,18 @@
                 hare = false;
               };
             };
+        };
+        containers = nix2containerPkgs.nix2container.buildImage {
+          name = "neovim";
+          tag = "latest";
+          copyToRoot = pkgs.buildEnv {
+            name = "neovim-root";
+            paths = [pkgs.gitFull packages.neovimEM];
+            pathsToLink = ["/bin"];
+          };
+          config = {
+            Cmd = ["${packages.neovimEM}/bin/nvim"];
+          };
         };
       };
     });
