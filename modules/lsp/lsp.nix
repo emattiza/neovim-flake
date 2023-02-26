@@ -38,6 +38,7 @@ in {
     dhall = mkEnableOption "Dhall LSP";
     hare = mkEnableOption "Hare plugin (not LSP)";
     elm = mkEnableOption "Elm LSP";
+    html = mkEnableOption "Html LSP (Emmet)";
   };
 
   config = mkIf cfg.enable (
@@ -465,6 +466,21 @@ in {
                 attach_keymaps(client, bufnr)
               end,
             }
+          ''}
+          ${writeIf cfg.html ''
+              -- HTML Config
+              lspconfig.emmet_ls.setup({
+                capabilities = snip_caps,
+                filetypes = {
+                  "css",
+                  "html",
+                  "javascriptreact",
+                  "less",
+                  "sass",
+                  "scss",
+                  "typescriptreact",
+                },
+            })
           ''}
         '';
       };

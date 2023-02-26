@@ -363,6 +363,7 @@
           elm = false;
           go = false;
           hare = false;
+          html = true;
         };
         vim.visuals = {
           enable = true;
