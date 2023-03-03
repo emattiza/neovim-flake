@@ -82,7 +82,6 @@ in {
             if cfg.rust.enable
             then [
               crates-nvim
-              rust-tools
               (
                 if cfg.hare
                 then hare-vim
@@ -93,26 +92,6 @@ in {
           );
 
         configRC = ''
-          ${
-            if cfg.rust.enable
-            then ''
-              function! MapRustTools()
-                nnoremap <silent><leader>ri <cmd>lua require('rust-tools.inlay_hints').toggle_inlay_hints()<CR>
-                nnoremap <silent><leader>rr <cmd>lua require('rust-tools.runnables').runnables()<CR>
-                nnoremap <silent><leader>re <cmd>lua require('rust-tools.expand_macro').expand_macro()<CR>
-                nnoremap <silent><leader>rc <cmd>lua require('rust-tools.open_cargo_toml').open_cargo_toml()<CR>
-                nnoremap <silent><leader>rg <cmd>lua require('rust-tools.crate_graph').view_crate_graph('x11', nil)<CR>
-              endfunction
-
-              autocmd filetype rust nnoremap <silent><leader>ri <cmd>lua require('rust-tools.inlay_hints').toggle_inlay_hints()<CR>
-              autocmd filetype rust nnoremap <silent><leader>rr <cmd>lua require('rust-tools.runnables').runnables()<CR>
-              autocmd filetype rust nnoremap <silent><leader>re <cmd>lua require('rust-tools.expand_macro').expand_macro()<CR>
-              autocmd filetype rust nnoremap <silent><leader>rc <cmd>lua require('rust-tools.open_cargo_toml').open_cargo_toml()<CR>
-              autocmd filetype rust nnoremap <silent><leader>rg <cmd>lua require('rust-tools.crate_graph').view_crate_graph('x11', nil)<CR>
-            ''
-            else ""
-          }
-
           ${
             if cfg.nix
             then ''
@@ -347,7 +326,6 @@ in {
                 name = "crates.nvim",
               }
             }
-            require('rust-tools').setup(rustopts)
           ''}
 
           ${writeIf cfg.terraform ''

@@ -58,10 +58,6 @@
       url = "github:nanotee/sqls.nvim";
       flake = false;
     };
-    rust-tools = {
-      url = "github:simrat39/rust-tools.nvim";
-      flake = false;
-    };
 
     vim-terraform = {
       url = "github:hashivim/vim-terraform";
@@ -304,7 +300,6 @@
         "sqls-nvim"
         "glow-nvim"
         "telescope"
-        "rust-tools"
         "onedark"
         "nightfox"
         "vim-terraform"

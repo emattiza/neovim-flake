@@ -895,7 +895,6 @@
         "purescript-vim": "purescript-vim",
         "registers": "registers",
         "rnix-lsp": "rnix-lsp",
-        "rust-tools": "rust-tools",
         "sqls-nvim": "sqls-nvim",
         "telescope": "telescope",
         "todo-comments": "todo-comments",
@@ -905,22 +904,6 @@
         "vim-terraform": "vim-terraform",
         "vim-vsnip": "vim-vsnip",
         "which-key": "which-key"
-      }
-    },
-    "rust-tools": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1667710081,
-        "narHash": "sha256-7lmLg2ePoeBMHewfgRAt79HMNAF3HWns1PKTe46cJXk=",
-        "owner": "simrat39",
-        "repo": "rust-tools.nvim",
-        "rev": "99fd1238c6068d0637df30b6cee9a264334015e9",
-        "type": "github"
-      },
-      "original": {
-        "owner": "simrat39",
-        "repo": "rust-tools.nvim",
-        "type": "github"
       }
     },
     "sqls-nvim": {
