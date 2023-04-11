@@ -23,5 +23,6 @@
     ./undotree
     ./git
     ./testing
+    ./conjure
   ];
 }
