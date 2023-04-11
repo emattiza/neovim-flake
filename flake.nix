@@ -256,6 +256,10 @@
       url = "github:Eandrju/cellular-automaton.nvim";
       flake = false;
     };
+    conjure = {
+      url = "github:Olical/conjure";
+      flake = false;
+    };
   };
 
   outputs = {
@@ -315,6 +319,7 @@
         "purescript-vim"
         "dhall-vim"
         "cellular-automaton"
+        "conjure"
       ];
 
       pluginOverlay = lib.buildPluginOverlay;
@@ -426,6 +431,9 @@
         vim.testing = {
           enable = true;
           coverage.enable = true;
+        };
+        vim.conjure = {
+          enable = true;
         };
       };
     in rec {
