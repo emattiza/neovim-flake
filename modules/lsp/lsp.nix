@@ -324,7 +324,7 @@ in {
             end
             local rustopts = {
               tools = {
-                autoSetHints = true,
+                autoSetHints = false,
                 hover_with_actions = false,
                 inlay_hints = {
                   only_current_line = false,
