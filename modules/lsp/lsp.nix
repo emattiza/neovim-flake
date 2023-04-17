@@ -303,7 +303,25 @@ in {
 
           ${writeIf cfg.rust.enable ''
             -- Rust config
+            require('crates').setup {
+              null_ls = {
+                enabled = true,
+                name = "crates.nvim",
+              }
+            }
 
+            local rt = require('rust-tools')
+            rust_on_attach = function(client, bufnr)
+              default_on_attach(client, bufnr)
+              local opts = { noremap=true, silent=true, buffer = bufnr }
+              vim.keymap.set("n", "<leader>ris", rt.inlay_hints.set, opts)
+              vim.keymap.set("n", "<leader>riu", rt.inlay_hints.unset, opts)
+              vim.keymap.set("n", "<leader>rr", rt.runnables.runnables, opts)
+              vim.keymap.set("n", "<leader>rp", rt.parent_module.parent_module, opts)
+              vim.keymap.set("n", "<leader>rm", rt.expand_macro.expand_macro, opts)
+              vim.keymap.set("n", "<leader>rc", rt.open_cargo_toml.open_cargo_toml, opts)
+              vim.keymap.set("n", "<leader>rg", function() rt.crate_graph.view_crate_graph("x11", nil) end, opts)
+            end
             local rustopts = {
               tools = {
                 autoSetHints = true,
@@ -314,46 +332,10 @@ in {
               },
               server = {
                 capabilities = capabilities,
-                on_attach = default_on_attach,
-                settings = {
-                  ${cfg.rust.rustAnalyzerOpts}
-                }
+                on_attach = rust_on_attach,
               }
             }
-
-            require('crates').setup {
-              null_ls = {
-                enabled = true,
-                name = "crates.nvim",
-              }
-            }
-
-              local rt = require('rust-tools')
-              rust_on_attach = function(client, bufnr)
-                default_on_attach(client, bufnr)
-                local opts = { noremap=true, silent=true, buffer = bufnr }
-                vim.keymap.set("n", "<leader>ris", rt.inlay_hints.set, opts)
-                vim.keymap.set("n", "<leader>riu", rt.inlay_hints.unset, opts)
-                vim.keymap.set("n", "<leader>rr", rt.runnables.runnables, opts)
-                vim.keymap.set("n", "<leader>rp", rt.parent_module.parent_module, opts)
-                vim.keymap.set("n", "<leader>rm", rt.expand_macro.expand_macro, opts)
-                vim.keymap.set("n", "<leader>rc", rt.open_cargo_toml.open_cargo_toml, opts)
-                vim.keymap.set("n", "<leader>rg", function() rt.crate_graph.view_crate_graph("x11", nil) end, opts)
-              end
-              local rustopts = {
-                tools = {
-                  autoSetHints = true,
-                  hover_with_actions = false,
-                  inlay_hints = {
-                    only_current_line = false,
-                  }
-                },
-                server = {
-                  capabilities = capabilities,
-                  on_attach = rust_on_attach,
-                }
-              }
-              rt.setup(rustopts)
+            rt.setup(rustopts)
           ''}
 
           ${writeIf cfg.terraform ''
