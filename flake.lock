@@ -112,22 +112,6 @@
         "type": "github"
       }
     },
-    "conjure": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1681140191,
-        "narHash": "sha256-ojxW+Z+hMKvqDF8JxmPZfoUnOO0kDRXtdgBg5ReMLLQ=",
-        "owner": "Olical",
-        "repo": "conjure",
-        "rev": "7625ed9afc689888a743492547b0f1ebbe367faf",
-        "type": "github"
-      },
-      "original": {
-        "owner": "Olical",
-        "repo": "conjure",
-        "type": "github"
-      }
-    },
     "crates-nvim": {
       "flake": false,
       "locked": {
@@ -872,7 +856,6 @@
         "cmp-path": "cmp-path",
         "cmp-treesitter": "cmp-treesitter",
         "cmp-vsnip": "cmp-vsnip",
-        "conjure": "conjure",
         "crates-nvim": "crates-nvim",
         "dhall-vim": "dhall-vim",
         "flake-utils": "flake-utils",
