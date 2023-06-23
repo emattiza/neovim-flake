@@ -5,7 +5,7 @@
     nix2container.url = "github:nlewo/nix2container";
 
     neovimUnwrapped = {
-      url = "github:neovim/neovim/v0.8.3?dir=contrib";
+      url = "github:neovim/neovim/v0.9.1?dir=contrib";
     };
 
     # LSP plugins

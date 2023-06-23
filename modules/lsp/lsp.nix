@@ -387,11 +387,11 @@ in {
 
           ${writeIf cfg.sql ''
             -- SQLS config
-            lspconfig.sqls.setup {
+            lspconfig.sqlls.setup {
               on_attach = function(client)
                 client.server_capabilities.execute_command = true
                 on_attach_keymaps(client, bufnr)
-                require'sqls'.setup{}
+                require'sqlls'.setup{}
               end,
             }
           ''}

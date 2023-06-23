@@ -9,7 +9,7 @@
   treesitterGrammars = prev.tree-sitter.withPlugins (p: [
     p.tree-sitter-dockerfile
     p.tree-sitter-janet-simple
-    p.tree-sitter-bash
+    # p.tree-sitter-bash
     p.tree-sitter-hcl
     p.tree-sitter-elm
     p.tree-sitter-dot
@@ -18,7 +18,7 @@
     p.tree-sitter-graphql
     p.tree-sitter-lua
     p.tree-sitter-vim
-    p.tree-sitter-sql
+    # p.tree-sitter-sql
     p.tree-sitter-go
     p.tree-sitter-gomod
     p.tree-sitter-c
@@ -26,7 +26,7 @@
     p.tree-sitter-python
     p.tree-sitter-rust
     p.tree-sitter-markdown
-    p.tree-sitter-comment
+    # p.tree-sitter-comment
     p.tree-sitter-toml
     p.tree-sitter-make
     p.tree-sitter-tsx
