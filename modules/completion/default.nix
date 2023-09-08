@@ -126,6 +126,10 @@ in {
           cmp.event:on('confirm_done', cmp_autopairs.on_confirm_done({ map_char = { text = ""} }))
         ''};
       '';
+      vim.snippets.vsnip.enable =
+        if (cfg.type == "nvim-cmp")
+        then true
+        else config.vim.snippets.vsnip.enable;
     }
   );
 }
