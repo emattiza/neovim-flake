@@ -202,6 +202,10 @@
       url = "github:kyazdani42/nvim-web-devicons";
       flake = false;
     };
+    fugitive = {
+      url = "github:tpope/vim-fugitive";
+      flake = false;
+    };
     gitsigns-nvim = {
       url = "github:lewis6991/gitsigns.nvim";
       flake = false;
@@ -271,6 +275,7 @@
         "nvim-treesitter-context"
         "nvim-treesitter-playground"
         "gitsigns-nvim"
+        "fugitive"
         "plenary-nvim"
         "nvim-lspconfig"
         "nvim-treesitter"

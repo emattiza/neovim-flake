@@ -191,6 +191,22 @@
         "type": "github"
       }
     },
+    "fugitive": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1694999474,
+        "narHash": "sha256-CaVuJYImEKpcZoSEuc3HDK1qOVP6K+K8RsmH5dJoOvw=",
+        "owner": "tpope",
+        "repo": "vim-fugitive",
+        "rev": "7679842b904aa7d290087a52c35229ffe8e7b218",
+        "type": "github"
+      },
+      "original": {
+        "owner": "tpope",
+        "repo": "vim-fugitive",
+        "type": "github"
+      }
+    },
     "gitsigns-nvim": {
       "flake": false,
       "locked": {
@@ -862,6 +878,7 @@
         "crates-nvim": "crates-nvim",
         "dhall-vim": "dhall-vim",
         "flake-utils": "flake-utils",
+        "fugitive": "fugitive",
         "gitsigns-nvim": "gitsigns-nvim",
         "glow-nvim": "glow-nvim",
         "indent-blankline": "indent-blankline",

@@ -31,8 +31,8 @@ in {
       in {
         vim.startPlugins = with pkgs.neovimPlugins;
           if (cfg.gitsigns.enable)
-          then [gitsigns-nvim]
-          else [];
+          then [gitsigns-nvim fugitive]
+          else [fugitive];
 
         vim.luaConfigRC = mkIf (cfg.gitsigns.enable) ''
           -- GitSigns setup
