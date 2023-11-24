@@ -1,5 +1,9 @@
 {
   description = "Jordan's Neovim Configuration";
+  nixConfig = {
+    extra-substituters = "https://emattiza.cachix.org";
+    extra-trusted-public-keys = "emattiza.cachix.org-1:DngCwMkBckEJbfnPU2/a01IgIczF1NmWmbNX4qoZK6w=";
+  };
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
     nix2container.url = "github:nlewo/nix2container";
