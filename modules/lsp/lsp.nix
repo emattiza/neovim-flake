@@ -415,7 +415,7 @@ in {
             }
           ''}
           ${writeIf cfg.purescript ''
-            -- Deno Config
+            -- Purescript Config
             lspconfig.purescriptls.setup{
               capabilities = capabilities;
               on_attach = function(client, bufnr)
@@ -425,7 +425,7 @@ in {
           ''}
 
           ${writeIf cfg.dhall ''
-            -- Deno Config
+            -- Dhall Config
             lspconfig.dhall_lsp_server.setup{
               capabilities = capabilities;
               on_attach = function(client, bufnr)
@@ -437,7 +437,6 @@ in {
             -- Deno Config
             lspconfig.denols.setup{
               capabilities = capabilities;
-              root_dir = lspconfig.util.root_pattern("deno.jsonc");
               on_attach = function(client, bufnr)
                 attach_keymaps(client, bufnr)
               end,
