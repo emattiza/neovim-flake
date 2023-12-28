@@ -922,6 +922,7 @@
         "tokyonight": "tokyonight",
         "trouble": "trouble",
         "undotree": "undotree",
+        "vim-jinja2-syntax": "vim-jinja2-syntax",
         "vim-terraform": "vim-terraform",
         "vim-vsnip": "vim-vsnip",
         "which-key": "which-key"
@@ -1066,6 +1067,22 @@
       "original": {
         "owner": "numtide",
         "repo": "flake-utils",
+        "type": "github"
+      }
+    },
+    "vim-jinja2-syntax": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1624372005,
+        "narHash": "sha256-57kZn10XBpCRRXsFSSEIUngdIJSj3cmNQHnkObj+ro4=",
+        "owner": "Glench",
+        "repo": "Vim-Jinja2-Syntax",
+        "rev": "2c17843b074b06a835f88587e1023ceff7e2c7d1",
+        "type": "github"
+      },
+      "original": {
+        "owner": "Glench",
+        "repo": "Vim-Jinja2-Syntax",
         "type": "github"
       }
     },

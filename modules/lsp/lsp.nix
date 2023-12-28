@@ -28,6 +28,7 @@ in {
     };
     shell = mkEnableOption "Shell LSP";
     terraform = mkEnableOption "Terraform LSP";
+    jinja = mkEnableOption "Jinja Support";
     python = mkEnableOption "Python LSP";
     clang = mkEnableOption "C language LSP";
     sql = mkEnableOption "SQL Language LSP";
@@ -75,6 +76,11 @@ in {
             (
               if cfg.terraform
               then vim-terraform
+              else null
+            )
+            (
+              if cfg.jinja
+              then vim-jinja2-syntax
               else null
             )
           ]

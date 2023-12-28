@@ -72,6 +72,11 @@
       flake = false;
     };
 
+    vim-jinja2-syntax = {
+      url = "github:Glench/Vim-Jinja2-Syntax";
+      flake = false;
+    };
+
     # Copying/Registers
     registers = {
       url = "github:tversteeg/registers.nvim";
@@ -317,6 +322,7 @@
         "onedark"
         "nightfox"
         "vim-terraform"
+        "vim-jinja2-syntax"
         "undotree"
         "nvim-coverage"
         "nvim-neotest"
@@ -364,6 +370,7 @@
           python = false;
           shell = false;
           terraform = false;
+          jinja = false;
           clang = false;
           sql = false;
           ts = false;
@@ -528,6 +535,7 @@
                 python = true;
                 shell = true;
                 terraform = true;
+                jinja = true;
                 clang = true;
                 sql = true;
                 ts = true;
