@@ -33,7 +33,7 @@ in {
         else "";
     in {
       vim.startPlugins = with pkgs.neovimPlugins; [
-        nvim-treesitter
+        pkgs.vimPlugins.nvim-treesitter.withAllGrammars
         (
           if cfg.autotagHtml
           then nvim-ts-autotag

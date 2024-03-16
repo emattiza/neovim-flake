@@ -34,7 +34,6 @@
         "fugitive"
         "plenary-nvim"
         "nvim-lspconfig"
-        "nvim-treesitter"
         "lspsaga"
         "lspkind"
         "nvim-lightbulb"
@@ -208,7 +207,7 @@
       overlays.default = final: prev: {
         inherit neovimBuilder;
         neovimEM = packages.neovimEM;
-        neovimPlugins = pkgs.neovimPlugins;
+        neovimPlugins = pkgs.neovimPlugins ++ pkgs.vimPlugins.nvim-treesitter.withAllGrammars;
       };
 
       packages = rec {
