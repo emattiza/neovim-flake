@@ -76,6 +76,7 @@
         "purescript-vim"
         "dhall-vim"
         "cellular-automaton"
+        "flash-nvim"
       ];
 
       pluginOverlay = lib.buildPluginOverlay;
@@ -188,6 +189,9 @@
         vim.testing = {
           enable = true;
           coverage.enable = true;
+        };
+        vim.flash = {
+          enable = true;
         };
       };
     in rec {

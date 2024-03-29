@@ -1,17 +1,5 @@
 {
   "pins": {
-    "vim-jinja2-syntax": {
-      "type": "Git",
-      "repository": {
-        "type": "GitHub",
-        "owner": "Glench",
-        "repo": "Vim-Jinja2-Syntax"
-      },
-      "branch": "main",
-      "revision": "2c17843b074b06a835f88587e1023ceff7e2c7d1",
-      "url": "https://github.com/Glench/Vim-Jinja2-Syntax/archive/2c17843b074b06a835f88587e1023ceff7e2c7d1.tar.gz",
-      "hash": "13mfzsw3kr3r826wkpd3jhh1sy2j10hlj1bv8n8r01hpbngikfg7"
-    },
     "bufdelete-nvim": {
       "type": "Git",
       "repository": {
@@ -119,6 +107,32 @@
       "revision": "68500ef46ff3706f46c99db3be7a0c8abcf6a3ae",
       "url": "https://github.com/vmchale/dhall-vim/archive/68500ef46ff3706f46c99db3be7a0c8abcf6a3ae.tar.gz",
       "hash": "0lwna4kcq7davfvh3535n8wl9jxkjm7cg6jgpisd17kvagihh8qw"
+    },
+    "flash-nvim": {
+      "type": "GitRelease",
+      "repository": {
+        "type": "GitHub",
+        "owner": "folke",
+        "repo": "flash.nvim"
+      },
+      "pre_releases": false,
+      "version_upper_bound": null,
+      "version": "v1.18.2",
+      "revision": "48817af25f51c0590653bbc290866e4890fe1cbe",
+      "url": "https://api.github.com/repos/folke/flash.nvim/tarball/v1.18.2",
+      "hash": "0cf1ll91mhqw73p3y366fxylrq0y222jl2kb8sxf2s4gisxpppcg"
+    },
+    "fugitive": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "tpope",
+        "repo": "vim-fugitive"
+      },
+      "branch": "main",
+      "revision": "7679842b904aa7d290087a52c35229ffe8e7b218",
+      "url": "https://github.com/tpope/vim-fugitive/archive/7679842b904aa7d290087a52c35229ffe8e7b218.tar.gz",
+      "hash": "1z1sd39fb1y98syf4azsacwnmb8cqz6vk144crfal416h8jnx989"
     },
     "gitsigns-nvim": {
       "type": "Git",
@@ -420,6 +434,18 @@
       "url": "https://github.com/nvim-treesitter/nvim-treesitter-context/archive/63f3ffc50b0afc59be1015153d00922498085be8.tar.gz",
       "hash": "1jvsf80q8dxhdxbphrms755aj4ak58xacpzgs91v5jb5zjcvmsx9"
     },
+    "nvim-treesitter-playground": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "nvim-treesitter",
+        "repo": "playground"
+      },
+      "branch": "main",
+      "revision": "2b81a018a49f8e476341dfcb228b7b808baba68b",
+      "url": "https://github.com/nvim-treesitter/playground/archive/2b81a018a49f8e476341dfcb228b7b808baba68b.tar.gz",
+      "hash": "1b7h4sih8dc55w12f0v5knk9cxfpy0iffhbvmg0g84if55ar616v"
+    },
     "nvim-ts-autotag": {
       "type": "Git",
       "repository": {
@@ -455,18 +481,6 @@
       "revision": "462b45758ea94ff30ad48979268094590a6b7b7e",
       "url": "https://github.com/navarasu/onedark.nvim/archive/462b45758ea94ff30ad48979268094590a6b7b7e.tar.gz",
       "hash": "0m7alckgwnqzv9zycrvpisnx8bg2n8057j8lvqjmx4fagfnr8nmh"
-    },
-    "nvim-treesitter-playground": {
-      "type": "Git",
-      "repository": {
-        "type": "GitHub",
-        "owner": "nvim-treesitter",
-        "repo": "playground"
-      },
-      "branch": "main",
-      "revision": "2b81a018a49f8e476341dfcb228b7b808baba68b",
-      "url": "https://github.com/nvim-treesitter/playground/archive/2b81a018a49f8e476341dfcb228b7b808baba68b.tar.gz",
-      "hash": "1b7h4sih8dc55w12f0v5knk9cxfpy0iffhbvmg0g84if55ar616v"
     },
     "plenary-nvim": {
       "type": "Git",
@@ -588,17 +602,17 @@
       "url": "https://github.com/mbbill/undotree/archive/485f01efde4e22cb1ce547b9e8c9238f36566f21.tar.gz",
       "hash": "13bpnacif1r40ncln14m013gnh6n9dnbvawnnna44splr6x39dan"
     },
-    "fugitive": {
+    "vim-jinja2-syntax": {
       "type": "Git",
       "repository": {
         "type": "GitHub",
-        "owner": "tpope",
-        "repo": "vim-fugitive"
+        "owner": "Glench",
+        "repo": "Vim-Jinja2-Syntax"
       },
       "branch": "main",
-      "revision": "7679842b904aa7d290087a52c35229ffe8e7b218",
-      "url": "https://github.com/tpope/vim-fugitive/archive/7679842b904aa7d290087a52c35229ffe8e7b218.tar.gz",
-      "hash": "1z1sd39fb1y98syf4azsacwnmb8cqz6vk144crfal416h8jnx989"
+      "revision": "2c17843b074b06a835f88587e1023ceff7e2c7d1",
+      "url": "https://github.com/Glench/Vim-Jinja2-Syntax/archive/2c17843b074b06a835f88587e1023ceff7e2c7d1.tar.gz",
+      "hash": "13mfzsw3kr3r826wkpd3jhh1sy2j10hlj1bv8n8r01hpbngikfg7"
     },
     "vim-terraform": {
       "type": "Git",
