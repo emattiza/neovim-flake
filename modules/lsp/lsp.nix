@@ -416,12 +416,12 @@ in {
               */
               ''
                 -- Nix config
-                lspconfig.nil_ls.setup{
+                lspconfig.nixd.setup{
                   capabilities = capabilities;
                   on_attach = function(client, bufnr)
                     attach_keymaps(client, bufnr)
                   end,
-                  cmd = {"${pkgs.nil}/bin/nil"}
+                  cmd = {"${pkgs.nixd}/bin/nixd"}
                 }
               ''}
 
