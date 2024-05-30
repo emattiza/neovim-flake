@@ -9,7 +9,7 @@
     nix2container.url = "github:nlewo/nix2container";
 
     neovimUnwrapped = {
-      url = "github:neovim/neovim/v0.9.5?dir=contrib";
+      url = "github:nix-community/neovim-nightly-overlay";
     };
 
     # LSP plugins
@@ -85,7 +85,7 @@
         inherit system;
         config = {allowUnfree = true;};
         overlays = [
-          neovimUnwrapped.overlay
+          neovimUnwrapped.overlays.default
           pluginOverlay
           (final: prev: {
             rnix-lsp = inputs.rnix-lsp.defaultPackage.${system};
