@@ -7,6 +7,7 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     nix2container.url = "github:nlewo/nix2container";
+    nixd.url = "github:nix-community/nixd/2.2.2";
 
     neovimUnwrapped = {
       url = "github:nix-community/neovim-nightly-overlay";
@@ -21,6 +22,7 @@
     nixpkgs,
     flake-utils,
     neovimUnwrapped,
+    nixd,
     nix2container,
     ...
   } @ inputs:
@@ -86,6 +88,7 @@
         config = {allowUnfree = true;};
         overlays = [
           neovimUnwrapped.overlays.default
+          nixd.overlays.default
           pluginOverlay
           (final: prev: {
             rnix-lsp = inputs.rnix-lsp.defaultPackage.${system};
